@@ -47,9 +47,9 @@ io.on('connection', function(socket){  //step #1 connection
   //assign a game, roomNumber, and reset queue when two players are in the waiting room
   if (playerPair===2){
     gameRooms.push(new Game(waitingRoom[0],waitingRoom[1],roomNumber));
-    waitingRoom=[];   //outside of the game object, socket controller is ready to add more players
-    roomNumber++;
-    playerPair=0;
+  //   waitingRoom=[];   //outside of the game object, socket controller is ready to add more players
+  //   roomNumber++;  short term heroku adjustment...
+  //   playerPair=0;
   }
     
   socket.on('disconnect', function(){   //disconnections for outside of "game"
